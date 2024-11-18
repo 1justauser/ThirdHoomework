@@ -32,6 +32,7 @@ namespace ThirdHoomework
             Console.InputEncoding = Encoding.UTF8;
 
             var test1 = Langauge.cSharp;
+            //работает
             Console.WriteLine("Я люблю {0}", LanguageExtender(test1));
         }
     }
