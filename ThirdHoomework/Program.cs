@@ -1,13 +1,13 @@
 ﻿using System.Text;
 
 
-namespace Tumakov
+namespace ThirdHomework
 {
     enum Check
     {
         Friday, Sunday = 50, Tuesday, Wednesday = 67, Thursday
     }
-    public class Program
+    public class Tasks
     {
         static void Main(string[] args)
         {
