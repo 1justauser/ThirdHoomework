@@ -15,6 +15,8 @@ namespace ThirdHoomework
 
         }
     }
+
+
     public class Tumakov
     {
         static void Main()
@@ -30,7 +32,7 @@ namespace ThirdHoomework
             Console.WriteLine("Для данного числа будут указаны его месяц и дата");
             DateTime dateDayMonth = new DateTime(2021, 1, 1);
             int daysPassed;
-            if (int.TryParse(Console.ReadLine(), out daysPassed))
+            if (int.TryParse(Console.ReadLine(), out daysPassed) && daysPassed > 0)
             {
                 if (daysPassed > 365 || daysPassed < 1)
                 {
@@ -58,7 +60,7 @@ namespace ThirdHoomework
             }
             else
             {
-                Console.WriteLine("Ошибка: Нужно ввести число");
+                Console.WriteLine("Ошибка: Нужно ввести натуральное число");
             }
 
 
@@ -69,7 +71,7 @@ namespace ThirdHoomework
             Console.WriteLine("Для данного числа будут указаны его месяц и дата");
             DateTime dateDayMonthException = new DateTime(2021, 1, 1);
             int daysPassedException;
-            if (int.TryParse(Console.ReadLine(), out daysPassedException))
+            if (int.TryParse(Console.ReadLine(), out daysPassedException) && daysPassedException > 0)
             {
                 try
                 {
@@ -101,10 +103,10 @@ namespace ThirdHoomework
             }
             else
             {
-                Console.WriteLine("Ошибка: Нужно ввести число");
+                Console.WriteLine("Ошибка: Нужно ввести натуральное число");
             }
 
-            
+
             //Домашнее задание 4.1 Изменить программу из упражнений 4.1 и 4.2 так, чтобы она
             //учитывала год (високосный или нет). Год вводится с экрана. (Год високосный, если он
             //делится на четыре без остатка, но если он делится на 100 без остатка, это не високосный
@@ -112,13 +114,13 @@ namespace ThirdHoomework
             Console.WriteLine("Домашнее задание 4.1");
             Console.WriteLine("Укажите год");
             int year;
-            if (!int.TryParse(Console.ReadLine(), out year))
+            if (!int.TryParse(Console.ReadLine(), out year) || year < 1)
             {
-                Console.WriteLine("Ошибка: Нужно ввести число");
+                Console.WriteLine("Ошибка: Нужно ввести натуральное число");
             }
             else
             {
-                if (year % 4 == 0 && (year % 100 != 0))
+                if ((year % 4 == 0 && (year % 100 != 0)) || (year % 400 == 0))
                 {
                     Console.WriteLine("Введите число дня года от 1 до 366");
                 }
@@ -129,15 +131,15 @@ namespace ThirdHoomework
                 Console.WriteLine("Для данного числа будут указаны его месяц и дата");
                 DateTime dateDayMonthLeapYear = new DateTime(year, 1, 1);
                 int daysPassedLeapYear;
-                if (int.TryParse(Console.ReadLine(), out daysPassedLeapYear))
+                if (int.TryParse(Console.ReadLine(), out daysPassedLeapYear) && daysPassedLeapYear > 0)
                 {
                     try
                     {
-                        if ((year % 4 == 0 && (year % 100 != 0)) && (daysPassedLeapYear <= 0 || daysPassedLeapYear > 366))
+                        if (((year % 4 == 0 && (year % 100 != 0)) || (year % 400 == 0)) && (daysPassedLeapYear <= 0 || daysPassedLeapYear > 366))
                         {
                             throw new OutOfRange("6");
                         }
-                        else if (!(year % 4 == 0 && (year % 100 != 0)) && (daysPassedLeapYear <= 0 || daysPassedLeapYear > 365))
+                        else if (!((year % 4 == 0 && (year % 100 != 0)) || (year % 400 == 0)) && (daysPassedLeapYear <= 0 || daysPassedLeapYear > 365))
                         {
                             throw new OutOfRange("5");
                         }
@@ -165,7 +167,7 @@ namespace ThirdHoomework
                 }
                 else
                 {
-                    Console.WriteLine("Ошибка: Нужно ввести число");
+                    Console.WriteLine("Ошибка: Нужно ввести натуральное число");
                 }
             }
         }
