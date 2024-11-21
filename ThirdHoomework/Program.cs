@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using System.Text.RegularExpressions;
 
 
@@ -188,11 +188,11 @@ namespace ThirdHomework
             StartTask(5);
             string[] heap = { "Hello Kitty", "Hello Kit", "Hello Kitty", "Barbie doll", "Barbll", "dasdsad" };
             List<string> bag = new List<string>();
-            foreach (string entity in heap)
+            foreach (string item in heap)
             {
-                if (entity == "Hello Kitty" || entity == "Barbie doll")
+                if (item == "Hello Kitty" || item == "Barbie doll")
                 {
-                    bag.Add(entity);
+                    bag.Add(item);
                 }
             }
             Console.WriteLine("Количество Кукол в сумке {0}", bag.Count);
