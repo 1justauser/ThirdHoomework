@@ -186,13 +186,13 @@ namespace ThirdHomework
             //"Hello Kitty" или "Barbie doll" необходимо положить их в “сумку”, т.е.прибавить к
             //результату.Вывести на экран сколько кукол в “сумке”.
             StartTask(5);
-            string[] dolls = { "Hello Kitty", "Hello Kit", "Hello Kitty", "Barbie doll", "Barbll", "dasdsad" };
+            string[] heap = { "Hello Kitty", "Hello Kit", "Hello Kitty", "Barbie doll", "Barbll", "dasdsad" };
             List<string> bag = new List<string>();
-            foreach (string doll in dolls)
+            foreach (string entity in heap)
             {
-                if (doll == "Hello Kitty" || doll == "Barbie doll")
+                if (entity == "Hello Kitty" || entity == "Barbie doll")
                 {
-                    bag.Add(doll);
+                    bag.Add(entity);
                 }
             }
             Console.WriteLine("Количество Кукол в сумке {0}", bag.Count);
